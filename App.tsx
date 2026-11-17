@@ -10,6 +10,7 @@ import { allOpenGymExercises, exercises, legacyExercises, exerciseAliases, norma
 import { OpenGymBody, bodyMuscles, exerciseBody, type BodyMuscle } from './src/OpenGymBody';
 import { exerciseIllustrations } from './src/exercise-illustrations';
 import { ExerciseMotion } from './src/ExerciseMotion';
+import { bodyThumbnails } from './src/body-thumbnails';
 import { useMembership } from './src/membership';
 
 type ThemeMode = 'system' | 'light' | 'dark';
@@ -66,7 +67,8 @@ function ExerciseRow({ exercise, onPress }: {exercise: Exercise; onPress: () => 
   const diagram=exerciseBody(exercise.primaryMuscles);
   const illustration=exerciseIllustrations[exercise.id];
   return <Pressable accessibilityRole="button" accessibilityLabel={titleFor(exercise)} onPress={onPress} style={s.exercise}>
-    <View style={s.thumb}>{illustration ? <Image source={illustration.frames[0]} style={s.thumbImage} resizeMode="contain"/> : <OpenGymBody {...diagram} height={76} width={48}/>}</View>
+    <View style={s.thumb}><Image source={illustration?.frames[0] ?? bodyThumbnails[diagram.selected ?? 'default'] ?? bodyThumbnails.default}
+      style={illustration ? s.thumbImage : {height:76,width:48}} resizeMode="contain" resizeMethod="resize"/></View>
     <View style={s.grow}><Text numberOfLines={2} style={s.h3}>{titleFor(exercise)}</Text>
       <Text style={s.small}>{exercise.primaryMuscles.map(m => muscles[m] ?? m).join('، ')} · {exerciseKind(exercise)}</Text></View>
     <ChevronLeft color={colors.deep} size={18}/>
@@ -186,6 +188,7 @@ function Healthy({mode,onThemeChange,isDark}: {mode:ThemeMode; onThemeChange:(mo
   </ScrollView>;
 
   const library = <FlatList data={filtered} keyExtractor={item => item.id} renderItem={({item}) => row(item)}
+    initialNumToRender={10} maxToRenderPerBatch={6} windowSize={5}
     keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} contentContainerStyle={s.content}
     ListHeaderComponent={<>
       <Intro eyebrow="مكتبة الحركة" title="اختر تمرينك" caption="تصفّح حسب العضلة والمعدات، واحفظ التمارين التي تفضّلها."/>
@@ -240,7 +243,7 @@ function Healthy({mode,onThemeChange,isDark}: {mode:ThemeMode; onThemeChange:(mo
       <View style={s.card}><Text style={s.h2}>مصادر التمارين والرسومات</Text>
         <Text style={s.copy}>كتالوج openGym من Duarte Santos والمساهمين برخصة AGPL 3.0. خريطة العضلات من MuscleMap برخصة MIT. وضعيات التمارين رسومات مولّدة من Marvin Nazari برخصة CC0.</Text>
         <Action quiet onPress={()=>void Linking.openURL('https://github.com/DuarteSantos8/openGym/blob/e4a68a94c42a3c17cbd560d66ce2e46a7048ab99/NOTICE.md')}>تراخيص المصادر</Action>
-        <Action quiet onPress={()=>void Linking.openURL('https://github.com/banmon1/healthy-care-offline/tree/v2.0.1')}>مصدر هذا الإصدار</Action>
+        <Action quiet onPress={()=>void Linking.openURL('https://github.com/banmon1/healthy-care-offline/tree/v2.0.2')}>مصدر هذا الإصدار</Action>
       </View>
     </>;
     if (current.type === 'exercise') {

@@ -2,7 +2,7 @@
   "expo": {
     "name": "HEALTH CARE",
     "slug": "healthy-secure-health",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "orientation": "portrait",
     "scheme": "healthy",
     "icon": "./assets/icon.png",
@@ -25,7 +25,7 @@
       },
       "predictiveBackGestureEnabled": false,
       "package": "com.healthy.securehealth",
-      "versionCode": 3,
+      "versionCode": 4,
       "blockedPermissions": [
         "android.permission.READ_EXTERNAL_STORAGE",
         "android.permission.WRITE_EXTERNAL_STORAGE",

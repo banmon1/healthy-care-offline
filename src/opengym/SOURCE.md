@@ -6,6 +6,6 @@ Copyright (C) 2026 Duarte Santos and contributors. See LICENSE-AGPL-3.0.txt and 
 
 Adapted for HEALTH CARE by selecting Arabic translations when available, adding a local ID prefix, and retaining the original exercise categories and identifiers. Exercise stills and animations are excluded.
 
-Body geometry is imported from frontend/src/lib/body-paths.js, derived from MuscleMap by Melih Colpan under the MIT licence reproduced in NOTICE-upstream.md. It is rendered locally in the HEALTH CARE orange palette.
+Body geometry is imported from frontend/src/lib/body-paths.js, derived from MuscleMap by Melih Colpan under the MIT licence reproduced in NOTICE-upstream.md. It is rendered locally in the HEALTH CARE orange palette. Library thumbnails are offline PNGs rasterized from the same paths by scripts/nabilo-render-body-thumbnails.py.
 
-The corresponding HEALTH CARE release source is published under AGPL-3.0 at https://github.com/banmon1/healthy-care-offline/tree/v2.0.1.
+The corresponding HEALTH CARE release source is published under AGPL-3.0 at https://github.com/banmon1/healthy-care-offline/tree/v2.0.2.
