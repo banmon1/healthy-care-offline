@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "HEALTH CARE",
+    "slug": "healthy-secure-health",
+    "version": "2.0.1",
+    "orientation": "portrait",
+    "scheme": "healthy",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMotionUsageDescription": "HEALTH CARE uses motion data to count your daily steps."
+      }
+    },
+    "android": {
+      "permissions": [
+        "android.permission.ACTIVITY_RECOGNITION"
+      ],
+      "allowBackup": false,
+      "adaptiveIcon": {
+        "backgroundColor": "#F9AD82",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.healthy.securehealth",
+      "versionCode": 3,
+      "blockedPermissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36
+          }
+        }
+      ],
+      "./plugins/withHealthySteps",
+      "./plugins/withHealthyRelease"
+    ]
+  }
+}
