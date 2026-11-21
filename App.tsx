@@ -243,7 +243,7 @@ function Healthy({mode,onThemeChange,isDark}: {mode:ThemeMode; onThemeChange:(mo
       <View style={s.card}><Text style={s.h2}>مصادر التمارين والرسومات</Text>
         <Text style={s.copy}>كتالوج openGym من Duarte Santos والمساهمين برخصة AGPL 3.0. خريطة العضلات من MuscleMap برخصة MIT. وضعيات التمارين رسومات مولّدة من Marvin Nazari برخصة CC0.</Text>
         <Action quiet onPress={()=>void Linking.openURL('https://github.com/DuarteSantos8/openGym/blob/e4a68a94c42a3c17cbd560d66ce2e46a7048ab99/NOTICE.md')}>تراخيص المصادر</Action>
-        <Action quiet onPress={()=>void Linking.openURL('https://github.com/banmon1/healthy-care-offline/tree/v2.0.2')}>مصدر هذا الإصدار</Action>
+        <Action quiet onPress={()=>void Linking.openURL('https://github.com/banmon1/healthy-care-offline/tree/v2.0.3')}>مصدر هذا الإصدار</Action>
       </View>
     </>;
     if (current.type === 'exercise') {

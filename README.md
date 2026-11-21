@@ -1,6 +1,6 @@
 # Healthy Care
 
-An offline Arabic exercise and activity app. This is the corresponding source for Android package `com.healthy.securehealth`, version 2.0.2 (code 4). The library, muscle explorer, water log, favourites and training progress work on the device. Additional training and meal schedules use a Google Play monthly subscription.
+An offline Arabic exercise and activity app. This is the corresponding source for Android package `com.healthy.securehealth`, version 2.0.3 (code 6). The library, muscle explorer, water log, favourites and training progress work on the device. Additional training and meal schedules use a Google Play monthly subscription.
 
 ## Build
 
